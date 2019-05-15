@@ -6,6 +6,7 @@
 //  Copyright © 2019 spencerdangel. All rights reserved.
 //
 
+import SnapKit
 import UIKit
 
 class ViewController: UIViewController {
@@ -14,6 +15,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        let basicConstraintsView = BasicConstraintsViewController();
+        self.view.addSubview(basicConstraintsView.view);
     }
 
 

@@ -14,6 +14,7 @@
 		1A467B83228CCC7100016F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A467B81228CCC7100016F45 /* LaunchScreen.storyboard */; };
 		1A467B8E228CCC7100016F45 /* swift_snapkit_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A467B8D228CCC7100016F45 /* swift_snapkit_demoTests.swift */; };
 		1A467B99228CCC7100016F45 /* swift_snapkit_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A467B98228CCC7100016F45 /* swift_snapkit_demoUITests.swift */; };
+		1A467BA9228CD35400016F45 /* BasicConstraintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A467BA8228CD35400016F45 /* BasicConstraintsViewController.swift */; };
 		5EFD8DC530C56BB7E1B4A9E2 /* Pods_swift_snapkit_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D4C7F318267E5E5A6C3417 /* Pods_swift_snapkit_demoUITests.framework */; };
 		7D6124E3AE49164B5DF1839D /* Pods_swift_snapkit_demoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 437EFB944E8CCD1E73A80B73 /* Pods_swift_snapkit_demoTests.framework */; };
 		8428017BDA9453CBFEB3E9C4 /* Pods_swift_snapkit_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F44EFA222A8F88542EBCEF /* Pods_swift_snapkit_demo.framework */; };
@@ -51,6 +52,7 @@
 		1A467B94228CCC7100016F45 /* swift-snapkit-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-snapkit-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A467B98228CCC7100016F45 /* swift_snapkit_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_snapkit_demoUITests.swift; sourceTree = "<group>"; };
 		1A467B9A228CCC7100016F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A467BA8228CD35400016F45 /* BasicConstraintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicConstraintsViewController.swift; sourceTree = "<group>"; };
 		29656BB4F0657AF055210D68 /* Pods-swift-snapkit-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-snapkit-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-snapkit-demo/Pods-swift-snapkit-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		2F3CBBE6932B860CD0D461D8 /* Pods-swift-snapkit-demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-snapkit-demoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-snapkit-demoTests/Pods-swift-snapkit-demoTests.release.xcconfig"; sourceTree = "<group>"; };
 		437EFB944E8CCD1E73A80B73 /* Pods_swift_snapkit_demoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_snapkit_demoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 		1A467B77228CCC6F00016F45 /* swift-snapkit-demo */ = {
 			isa = PBXGroup;
 			children = (
+				1A467BA7228CD33700016F45 /* Views */,
 				1A467B78228CCC6F00016F45 /* AppDelegate.swift */,
 				1A467B7A228CCC6F00016F45 /* ViewController.swift */,
 				1A467B7C228CCC6F00016F45 /* Main.storyboard */,
@@ -150,6 +153,14 @@
 				1A467B9A228CCC7100016F45 /* Info.plist */,
 			);
 			path = "swift-snapkit-demoUITests";
+			sourceTree = "<group>";
+		};
+		1A467BA7228CD33700016F45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A467BA8228CD35400016F45 /* BasicConstraintsViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A8BB183DD08FD56B55389698 /* Pods */ = {
@@ -393,6 +404,7 @@
 			files = (
 				1A467B7B228CCC6F00016F45 /* ViewController.swift in Sources */,
 				1A467B79228CCC6F00016F45 /* AppDelegate.swift in Sources */,
+				1A467BA9228CD35400016F45 /* BasicConstraintsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
