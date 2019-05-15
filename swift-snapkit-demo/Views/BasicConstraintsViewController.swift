@@ -42,6 +42,18 @@ class BasicConstraintsViewController: UIViewController {
             make.center.equalToSuperview();
             make.width.height.equalTo(200);
         }
+        
+        let offsetCircle = UIView();
+        offsetCircle.backgroundColor = UIColor.gray;
+        offsetCircle.layer.cornerRadius = 25;
+        offsetCircle.layer.masksToBounds = true;
+        
+        self.view.addSubview(offsetCircle);
+        offsetCircle.snp.makeConstraints{ make in
+            make.centerX.equalTo(centerCircle.snp.centerX).offset(-40);
+            make.centerY.equalTo(centerCircle.snp.centerY).offset(40);
+            make.width.height.equalTo(50);
+        }
     }
     
 
