@@ -31,6 +31,17 @@ class BasicConstraintsViewController: UIViewController {
             make.bottom.right.equalToSuperview();
             make.width.height.equalTo(150);
         }
+        
+        let centerCircle = UIView();
+        centerCircle.backgroundColor = UIColor.green;
+        centerCircle.layer.cornerRadius = 100;
+        centerCircle.layer.masksToBounds = true;
+        
+        self.view.addSubview(centerCircle);
+        centerCircle.snp.makeConstraints{ make in
+            make.center.equalToSuperview();
+            make.width.height.equalTo(200);
+        }
     }
     
 
