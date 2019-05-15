@@ -23,11 +23,18 @@ class ViewController: UIViewController {
                 make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottomMargin);
             } else {
                 make.top.equalTo(self.view);
+                make.bottom.equalTo(self.view);
             }
+            
+            make.left.right.equalToSuperview();
         }
         
         let basicConstraintsView = BasicConstraintsViewController();
         subview.addSubview(basicConstraintsView.view);
+        
+        basicConstraintsView.view.snp.makeConstraints { make in
+            make.edges.equalToSuperview();
+        }
     }
 
 
