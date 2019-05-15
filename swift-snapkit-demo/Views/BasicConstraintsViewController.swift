@@ -22,6 +22,15 @@ class BasicConstraintsViewController: UIViewController {
             make.left.top.equalToSuperview();
             make.width.height.equalTo(150);
         }
+        
+        let bottomRightBox = UIView();
+        bottomRightBox.backgroundColor = UIColor.red;
+        
+        self.view.addSubview(bottomRightBox);
+        bottomRightBox.snp.makeConstraints{ make in
+            make.bottom.right.equalToSuperview();
+            make.width.height.equalTo(150);
+        }
     }
     
 
