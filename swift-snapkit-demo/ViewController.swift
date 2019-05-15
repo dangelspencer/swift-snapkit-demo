@@ -15,8 +15,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        let subview = UIView();
+        self.view.addSubview(subview);
+        subview.snp.makeConstraints { make in
+            if #available(iOS 11, *) {
+                make.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin);
+                make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottomMargin);
+            } else {
+                make.top.equalTo(self.view);
+            }
+        }
+        
         let basicConstraintsView = BasicConstraintsViewController();
-        self.view.addSubview(basicConstraintsView.view);
+        subview.addSubview(basicConstraintsView.view);
     }
 
 
