@@ -60,6 +60,10 @@ class ListViewController: UIViewController {
         let label = UILabel();
         label.text = String(self.count);
         label.textAlignment = .center;
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(removeItem(gesture:)));
+        label.addGestureRecognizer(tapGesture);
+        label.isUserInteractionEnabled = true;
 
         self.stackView.addArrangedSubview(label);
         label.snp.makeConstraints{ make in
@@ -67,5 +71,9 @@ class ListViewController: UIViewController {
         }
 
         self.count += 1;
+    }
+    
+    @objc func removeItem(gesture: UITapGestureRecognizer) {
+        gesture.view?.removeFromSuperview();
     }
 }
