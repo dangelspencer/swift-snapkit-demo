@@ -29,14 +29,10 @@ class ViewController: UIViewController {
             make.left.right.equalToSuperview();
         }
         
-        let listView = ListViewController();
-        subview.addSubview(listView.view);
-        
-        listView.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview();
-        }
     }
-
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.present(ListViewController(), animated: false);
+    }
 }
 
