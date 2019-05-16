@@ -29,10 +29,10 @@ class ViewController: UIViewController {
             make.left.right.equalToSuperview();
         }
         
-        let basicConstraintsView = BasicConstraintsViewController();
-        subview.addSubview(basicConstraintsView.view);
+        let listView = ListViewController();
+        subview.addSubview(listView.view);
         
-        basicConstraintsView.view.snp.makeConstraints { make in
+        listView.view.snp.makeConstraints { make in
             make.edges.equalToSuperview();
         }
     }
