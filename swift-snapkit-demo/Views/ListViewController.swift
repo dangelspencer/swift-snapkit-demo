@@ -13,13 +13,20 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let scrollView = UIScrollView();
+        
+        self.view.addSubview(scrollView);
+        scrollView.snp.makeConstraints{ make in
+            make.edges.equalToSuperview();
+        }
+        
         let stackView = UIStackView();
         stackView.axis = .vertical;
         stackView.spacing = 10;
         
-        self.view.addSubview(stackView);
+        scrollView.addSubview(stackView);
         stackView.snp.makeConstraints{ make in
-            make.left.right.top.equalToSuperview();
+            make.edges.width.equalToSuperview();
         }
         
         for i in 1...100 {
