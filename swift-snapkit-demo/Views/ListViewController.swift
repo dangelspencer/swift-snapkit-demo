@@ -19,27 +19,42 @@ class ListViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white;
         
-        let scrollView = UIScrollView();
-        scrollView.delaysContentTouches = false;
-
-        self.view.addSubview(scrollView);
-        scrollView.snp.makeConstraints{ make in
-            make.top.bottom.equalTo(self.view.safeAreaLayoutGuide);
-            make.left.right.width.equalToSuperview();
-        }
-        
-        let addItemButton = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 25));
+        let addItemButton = UIButton();
         addItemButton.setTitle("Add Item", for: .normal);
         addItemButton.setTitleColor(UIColor.blue, for: .normal);
         addItemButton.setTitleColor(UIColor.black, for: .highlighted);
         addItemButton.addTarget(self, action: #selector(self.addItem), for: .touchUpInside);
         
-        scrollView.addSubview(addItemButton);
+        self.view.addSubview(addItemButton);
         addItemButton.snp.makeConstraints{ make in
-            make.top.equalToSuperview();
+            make.top.equalTo(self.view.safeAreaLayoutGuide);
             make.centerX.equalToSuperview();
             make.width.equalTo(200);
             make.height.equalTo(25);
+        }
+        
+        let closeButton = UIButton();
+        closeButton.setTitle("Close", for: .normal);
+        closeButton.setTitleColor(UIColor.blue, for: .normal);
+        closeButton.setTitleColor(UIColor.black, for: .highlighted);
+        closeButton.addTarget(self, action: #selector(self.closeView), for: .touchUpInside);
+        
+        self.view.addSubview(closeButton);
+        closeButton.snp.makeConstraints{ make in
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide);
+            make.centerX.equalToSuperview();
+            make.width.equalTo(200);
+            make.height.equalTo(25);
+        }
+        
+        let scrollView = UIScrollView();
+        scrollView.delaysContentTouches = false;
+        
+        self.view.addSubview(scrollView);
+        scrollView.snp.makeConstraints{ make in
+            make.top.equalTo(addItemButton.snp.bottom).offset(10);
+            make.bottom.equalTo(closeButton.snp.top).offset(-10);
+            make.left.right.width.equalToSuperview();
         }
         
         stackView.axis = .vertical;
@@ -47,8 +62,7 @@ class ListViewController: UIViewController {
 
         scrollView.addSubview(stackView);
         stackView.snp.makeConstraints{ make in
-            make.top.equalTo(addItemButton.snp.bottom).offset(20);
-            make.left.right.bottom.width.equalToSuperview();
+            make.edges.width.equalToSuperview();
         }
         
         for _ in 1...10 {
@@ -75,5 +89,9 @@ class ListViewController: UIViewController {
     
     @objc func removeItem(gesture: UITapGestureRecognizer) {
         gesture.view?.removeFromSuperview();
+    }
+    
+    @objc func closeView() {
+        self.dismiss(animated: true, completion: nil);
     }
 }

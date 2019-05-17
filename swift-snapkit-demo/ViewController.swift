@@ -15,24 +15,49 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let subview = UIView();
-        self.view.addSubview(subview);
-        subview.snp.makeConstraints { make in
-            if #available(iOS 11, *) {
-                make.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin);
-                make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottomMargin);
-            } else {
-                make.top.equalTo(self.view);
-                make.bottom.equalTo(self.view);
-            }
-            
-            make.left.right.equalToSuperview();
+        let navView = UIView();
+        
+        self.view.addSubview(navView);
+        
+        let constraintsButton = UIButton();
+        constraintsButton.setTitle("Constraints Example", for: .normal);
+        constraintsButton.setTitleColor(UIColor.blue, for: .normal);
+        constraintsButton.addTarget(self, action: #selector(self.launchConstraints), for: .touchUpInside);
+        
+        navView.addSubview(constraintsButton);
+        constraintsButton.snp.makeConstraints{ make in
+            make.centerX.equalToSuperview();
+            make.width.equalTo(200);
+            make.height.equalTo(25);
         }
         
+        let listButton = UIButton();
+        listButton.setTitle("List Example", for: .normal);
+        listButton.setTitleColor(UIColor.blue, for: .normal);
+        listButton.addTarget(self, action: #selector(self.launchList), for: .touchUpInside);
+        
+        navView.addSubview(listButton);
+        listButton.snp.makeConstraints{ make in
+            make.top.equalTo(constraintsButton.snp.bottom).offset(10);
+            make.centerX.equalToSuperview();
+            make.width.equalTo(200);
+            make.height.equalTo(25);
+        }
+        
+        navView.snp.makeConstraints{ make in
+            make.top.equalTo(constraintsButton);
+            make.bottom.equalTo(listButton);
+            make.center.equalToSuperview();
+            make.width.equalToSuperview();
+        }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.present(ListViewController(), animated: false);
+    @objc func launchConstraints() {
+        self.present(BasicConstraintsViewController(), animated: true);
+    }
+    
+    @objc func launchList() {
+        self.present(ListViewController(), animated: true);
     }
 }
 
